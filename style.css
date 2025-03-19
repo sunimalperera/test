@@ -1,0 +1,300 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff758c, #ff7eb3, #1e3c72);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+header nav {
+    margin-top: 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ff6f61;
+}
+
+/* Dashboard Container */
+.dashboard {
+    width: 95%;
+    max-width: 1550px;
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Search Form */
+.search-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+}
+
+.search-form button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #ff6f61, #ff4a3d);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.search-form button:hover {
+    background: linear-gradient(135deg, #ff4a3d, #ff6f61);
+    transform: scale(1.05);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #ff4a3d;
+    animation: fadeIn 1s ease-in-out;
+}
+
+th, td {
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: left;
+    border: 3px solid #c9c8c8;
+    transition: background 0.3s ease;
+}
+
+th {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #ff4a3d;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+tr:hover {
+    background: rgba(255, 111, 97, 0.2);
+}
+
+/* Compare Prices Button */
+button.compare-prices {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff6f61, #ff4a3d);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button.compare-prices:hover {
+    background: linear-gradient(135deg, #ff4a3d, #ff6f61);
+    transform: scale(1.05);
+}
+
+/* Supplier Prices Modal */
+.supplier-prices-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.supplier-prices-modal h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.supplier-prices-modal table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.supplier-prices-modal button {
+    padding: 10px 20px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.supplier-prices-modal button:hover {
+    background: #ff4a3d;
+}
+
+/* Password Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 25px;
+    width: 350px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal-content input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="password"]:focus {
+    border-color: #ff6f61;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff6f61, #ff4a3d);
+    color: white;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.modal-content button:hover {
+    background: linear-gradient(135deg, #ff4a3d, #ff6f61);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form input[type="text"] {
+        width: 100%;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+}
